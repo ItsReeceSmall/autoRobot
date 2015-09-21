@@ -21,7 +21,7 @@ def getSideDist(TRIG, ECHO):
     pulse_duration = pulse_end - pulse_start
     distance = pulse_duration * 17150
     distance = round(distance, 2)
-    print ("Distance: " + distance + "cm")
+    print ("Distance: " + str(distance) + "cm")
     return distance
 
 def getDistance(sonar):
@@ -71,7 +71,7 @@ startMotor(lmf, lmb, rmf, rmb)
 
 while True:
     getSideDist(38, 36)
-    getSideDist(35, 37)
+    getSideDist(37, 35)
 
 # Try's statement to check if ultrasonic works
 '''
