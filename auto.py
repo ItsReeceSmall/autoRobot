@@ -59,8 +59,8 @@ gpio.setmode(gpio.BOARD)
 # all the pins we will use
 lmf = 19
 lmb = 21
-rmf = 24
-rmb = 26
+rmf = 26
+rmb = 24
 sonar = 8
 trigL = 38
 echoL = 36
@@ -75,8 +75,8 @@ rmfPWM = gpio.PWM(rmf,100)
 rmbPWM = gpio.PWM(rmb,100)
 rmfPWM.start(0)
 rmbPWM.start(0)
-rmfPWM.ChangeDutyCycle(0)
-rmbPWM.ChangeDutyCycle(96)
+rmfPWM.ChangeDutyCycle(96)
+rmbPWM.ChangeDutyCycle(0)
     # Left Wheel Forward
 lmfPWM = gpio.PWM(lmf,100)
 lmbPWM = gpio.PWM(lmb,100)
@@ -99,7 +99,7 @@ while True:
     print (right)
     if right < 25:
         lmfPWM.ChangeDutyCycle(85)
-        print ('lmf speed = 85')
+        print ('lmf speed = 89')
         lmbPWM.ChangeDutyCycle(0)
         rmfPWM.ChangeDutyCycle(100)
         print ('rmf speed = 100')
