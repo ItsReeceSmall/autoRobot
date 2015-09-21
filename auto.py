@@ -90,19 +90,19 @@ while True:
     print (left)
     if left < 25:
         lmfPWM.ChangeDutyCycle(100)
-        print 'lmf speed = 100'
+        print ('lmf speed = 100')
         lmbPWM.ChangeDutyCycle(0)
         rmfPWM.ChangeDutyCycle(85)
-        print 'rmf speed = 85'
+        print ('rmf speed = 85')
         rmbPWM.ChangeDutyCycle(0)
     right = getSideDist(trigR, echoR)
     print (right)
     if right < 25:
         lmfPWM.ChangeDutyCycle(85)
-        print 'lmf speed = 85'
+        print ('lmf speed = 85')
         lmbPWM.ChangeDutyCycle(0)
         rmfPWM.ChangeDutyCycle(100)
-        print 'rmf speed = 100'
+        print ('rmf speed = 100')
         rmbPWM.ChangeDutyCycle(0)
 
 # Try's statement to check if ultrasonic works
