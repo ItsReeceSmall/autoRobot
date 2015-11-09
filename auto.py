@@ -10,7 +10,7 @@ def getSideDist(TRIG, ECHO):
     gpio.setup(ECHO,gpio.IN)
     gpio.output(TRIG, False)
     #print "Waiting For Sensor To Settle"
-    time.sleep(2)
+    time.sleep(1)
     gpio.output(TRIG, True)
     time.sleep(0.00001)
     gpio.output(TRIG, False)
@@ -69,11 +69,41 @@ echoR = 35
 # runs setup for all the motor pins
 startMotor(lmf, lmb, rmf, rmb)
 
+#Wheels
+    # Right wheel Forward
+rmfPWM = gpio.PWM(rmf,100)
+rmbPWM = gpio.PWM(rmb,100)
+rmfPWM.start(0)
+rmbPWM.start(0)
+rmfPWM.ChangeDutyCycle(0)
+rmbPWM.ChangeDutyCycle(96)
+    # Left Wheel Forward
+lmfPWM = gpio.PWM(lmf,100)
+lmbPWM = gpio.PWM(lmb,100)
+lmfPWM.start(0)
+lmbPWM.start(0)
+lmfPWM.ChangeDutyCycle(100)
+lmbPWM.ChangeDutyCycle(0)
+    
 while True:
     left = getSideDist(trigL, echoL)
     print (left)
+    if left < 25:
+        lmfPWM.ChangeDutyCycle(100)
+        print 'lmf speed = 100'
+        lmbPWM.ChangeDutyCycle(0)
+        rmfPWM.ChangeDutyCycle(85)
+        print 'rmf speed = 85'
+        rmbPWM.ChangeDutyCycle(0)
     right = getSideDist(trigR, echoR)
     print (right)
+    if right < 25:
+        lmfPWM.ChangeDutyCycle(85)
+        print 'lmf speed = 85'
+        lmbPWM.ChangeDutyCycle(0)
+        rmfPWM.ChangeDutyCycle(100)
+        print 'rmf speed = 100'
+        rmbPWM.ChangeDutyCycle(0)
 
 # Try's statement to check if ultrasonic works
 '''
@@ -89,30 +119,6 @@ except:
 # if there is a problem, program then this is printed and the sensor is no longer checked.
     print('Program interrupted')
 '''
-######################################
-#	WHEELS
-######################################
-
-# Left Wheel Forward
-lmfPWM = gpio.PWM(lmf,100)
-lmbPWM = gpio.PWM(lmb,100)
-lmfPWM.start(0)
-lmbPWM.start(0)
-lmfPWM.ChangeDutyCycle(100)
-lmbPWM.ChangeDutyCycle(0)
-#gpio.output(lmf, gpio.LOW)
-#gpio.output(lmb, gpio.HIGH)
-
-# Right wheel Forward
-rmfPWM = gpio.PWM(rmf,100)
-rmbPWM = gpio.PWM(rmb,100)
-rmfPWM.start(0)
-rmbPWM.start(0)
-rmfPWM.ChangeDutyCycle(0)
-rmbPWM.ChangeDutyCycle(96)
-#gpio.output(rmf, gpio.LOW)
-#gpio.output(rmb, gpio.HIGH)
-
 time.sleep(10)
 gpio.cleanup()
 sys.exit()
