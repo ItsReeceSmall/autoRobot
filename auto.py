@@ -64,14 +64,14 @@ rmb = 26
 sonar = 8
 trigL = 38
 echoL = 36
-trigR = 35
-echoR = 37
+trigR = 37
+echoR = 35
 # runs setup for all the motor pins
 startMotor(lmf, lmb, rmf, rmb)
 
 while True:
     left = getSideDist(trigL, echoL)
-    right = getSideDist(37, 35)
+    right = getSideDist(trigR, echoR)
 
 # Try's statement to check if ultrasonic works
 '''
