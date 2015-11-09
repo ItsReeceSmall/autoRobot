@@ -71,9 +71,9 @@ startMotor(lmf, lmb, rmf, rmb)
 
 while True:
     left = getSideDist(38, 36)
-    print left
+    print (left)
     right = getSideDist(37, 35)
-    print right
+    print (right)
 
 # Try's statement to check if ultrasonic works
 '''
