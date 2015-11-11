@@ -1,9 +1,6 @@
 import RPi.GPIO as gpio
-#from Adafruit_PWM_Servo_Driver_py3 import PWM
 import time
 import sys
-
-#def getLeftDist():
 
 def getSideDist(TRIG, ECHO):
     gpio.setup(TRIG,gpio.OUT)
@@ -68,7 +65,6 @@ trigR = 37
 echoR = 35
 # runs setup for all the motor pins
 startMotor(lmf, lmb, rmf, rmb)
-
 #Wheels
     # Right wheel Forward
 rmfPWM = gpio.PWM(rmf,100)
@@ -86,8 +82,10 @@ lmfPWM.ChangeDutyCycle(100)
 lmbPWM.ChangeDutyCycle(0)
     
 while True:
+    sonar = getDistance()
+    print ('Front: ' + str(sonar))
     left = getSideDist(trigL, echoL)
-    print (left)
+    print ('Left: ' + str(left))
     if left < 25:
         lmfPWM.ChangeDutyCycle(80)
         print ('lmf speed = 80')
@@ -100,7 +98,7 @@ while True:
         lmfPWM.ChangeDutyCycle(100)
         rmfPWM.ChangeDutyCycle(96)
     right = getSideDist(trigR, echoR)
-    print (right)
+    print ('Right: ' + str(right))
     if right < 25:
         lmfPWM.ChangeDutyCycle(100)
         print ('lmf speed = 100')
@@ -112,26 +110,6 @@ while True:
         print ('reset to 96')
         rmfPWM.ChangeDutyCycle(96)
 
-# Try's statement to check if ultrasonic works
-'''
-try:
-# runs over and over checking the ultrasonic sensor
-    while True:
-    # sets 'dist' to the value of the ultrasonic sensor, and imports 'sonar' to the pin number 8
-        dist = getDistance(sonar)
-        time.sleep(0.5)
-        # optional print
-        print (dist)
-except:
-# if there is a problem, program then this is printed and the sensor is no longer checked.
-    print('Program interrupted')
-'''
 time.sleep(10)
 gpio.cleanup()
 sys.exit()
-# Left Wheel Back
-#gpio.output(lmf, gpio.HIGH)
-#gpio.output(lmb, gpio.LOW)
-# Right Wheel Back
-#gpio.output(rmf, gpio.HIGH)
-#gpio.output(rmb, gpio.LOW)
