@@ -106,7 +106,7 @@ while True:
         print ('lmf speed = 80')
         lmbPWM.ChangeDutyCycle(0)
         rmfPWM.ChangeDutyCycle(100)
-        print ('rmf speed = 100' + str(rmfPWM))
+        print ('rmf speed = 100' + str(rmfPWM.ChangeDutyCycle))
         rmbPWM.ChangeDutyCycle(0)
         time.sleep(1)
         print ('reset to 96')
