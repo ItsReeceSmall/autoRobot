@@ -10,7 +10,7 @@ def getSideDist(TRIG, ECHO):
     gpio.setup(ECHO,gpio.IN)
     gpio.output(TRIG, False)
     #print "Waiting For Sensor To Settle"
-    time.sleep(0.5)
+    time.sleep(0.2)
     gpio.output(TRIG, True)
     time.sleep(0.00001)
     gpio.output(TRIG, False)
@@ -95,10 +95,10 @@ while True:
         rmfPWM.ChangeDutyCycle(100)
         print ('rmf speed = 100')
         rmbPWM.ChangeDutyCycle(0)
-        #time.sleep(1)
-        #print ('reset to 100 and 96')
-        #lmfPWM.ChangeDutyCycle(100)
-        #rmfPWM.ChangeDutyCycle(96)
+        time.sleep(1)
+        print ('reset to 100 and 96')
+        lmfPWM.ChangeDutyCycle(100)
+        rmfPWM.ChangeDutyCycle(96)
     right = getSideDist(trigR, echoR)
     print (right)
     if right < 25:
@@ -108,9 +108,9 @@ while True:
         rmfPWM.ChangeDutyCycle(80)
         print ('rmf speed = 80')
         rmbPWM.ChangeDutyCycle(0)
-        #time.sleep(1)
-        #print ('reset to 96')
-        #rmfPWM.ChangeDutyCycle(96)
+        time.sleep(1)
+        print ('reset to 96')
+        rmfPWM.ChangeDutyCycle(96)
 
 # Try's statement to check if ultrasonic works
 '''
