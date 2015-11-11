@@ -89,7 +89,7 @@ while True:
         lmfPWM.ChangeDutyCycle(0)
         lmbPWM.ChangeDutyCycle(0)
         rmfPWM.ChangeDutyCycle(0)
-        rmbPWM.ChamgeDutyCycle(0)
+        rmbPWM.ChangeDutyCycle(0)
         if left < right:
             print('Rotating Right')
             lmbPWM.ChangeDutyCycle(50)
