@@ -89,19 +89,19 @@ while True:
     left = getSideDist(trigL, echoL)
     print (left)
     if left < 25:
-        lmfPWM.ChangeDutyCycle(100)
+        lmfPWM.ChangeDutyCycle(85)
         print ('lmf speed = 100')
         lmbPWM.ChangeDutyCycle(0)
-        rmfPWM.ChangeDutyCycle(85)
+        rmfPWM.ChangeDutyCycle(100)
         print ('rmf speed = 85')
         rmbPWM.ChangeDutyCycle(0)
     right = getSideDist(trigR, echoR)
     print (right)
     if right < 25:
-        lmfPWM.ChangeDutyCycle(85)
+        lmfPWM.ChangeDutyCycle(100)
         print ('lmf speed = 89')
         lmbPWM.ChangeDutyCycle(0)
-        rmfPWM.ChangeDutyCycle(100)
+        rmfPWM.ChangeDutyCycle(85)
         print ('rmf speed = 100')
         rmbPWM.ChangeDutyCycle(0)
 
