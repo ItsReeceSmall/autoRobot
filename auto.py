@@ -82,7 +82,7 @@ lmfPWM.ChangeDutyCycle(100)
 lmbPWM.ChangeDutyCycle(0)
     
 while True:
-    sonar = getDistance()
+    sonar = getDistance(sonar)
     print ('Front: ' + str(sonar))
     left = getSideDist(trigL, echoL)
     print ('Left: ' + str(left))
