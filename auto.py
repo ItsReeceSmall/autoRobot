@@ -118,11 +118,14 @@ while True:
     print ('Front: ' + str(front))
     if front < 30:
         lmfPWM.ChangeDutyCycle(0)
-        lmbPWM.ChangeDutyCycle(50)
+        lmbPWM.ChangeDutyCycle(0)
         rmfPWM.ChangeDutyCycle(0)
-        rmbPWM.ChangeDutyCycle(50)
-        time.sleep(2)
+        rmbPWM.ChangeDutyCycle(0)
         if left < right:
+            print('Going Back')
+            lmbPWM.ChangeDutyCycle(50)
+            rmbPWM.ChangeDutyCycle(50)
+            time.sleep(2)
             print('Rotating Right')
             lmbPWM.ChangeDutyCycle(50)
             rmfPWM.ChangeDutyCycle(50)
