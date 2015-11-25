@@ -1,6 +1,5 @@
 import RPi.GPIO as gpio
-import time
-import sys
+import time, sys, os, glob, threading
 
 gpio.setmode(gpio.BOARD)
 
