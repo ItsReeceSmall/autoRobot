@@ -18,4 +18,6 @@ class Pins:
     @Outputs.setter
     def Outputs(self, value):
         self.__outputs = value
-        
+    
+    # Need to write code to setup all the pins that have been passed in
+    
