@@ -21,5 +21,5 @@ echoL = 36
 trigR = 37
 echoR = 35
 
-setup()
+setup(trigL,trigR,sonar,lmf,lmb,rmf,rmb,echoL,echoR)
 gpio.cleanup()
