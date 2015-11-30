@@ -20,4 +20,14 @@ class Pins:
         self.__outputs = value
     
     # Need to write code to setup all the pins that have been passed in
-    
+
+    def setupPins(self):
+        # RPi code to setup inputs
+        for pin in self.__inputs:
+            GPIO.setup(pin, GPIO.IN)
+
+        # RPi code to setup outputs
+        for pin in self.__outputs:
+            GPIO.setup(pin, GPIO.OUT)
+
+
