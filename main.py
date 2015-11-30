@@ -22,3 +22,4 @@ trigR = 37
 echoR = 35
 
 setup()
+gpio.cleanup()
