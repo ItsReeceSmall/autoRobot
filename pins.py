@@ -1,3 +1,6 @@
+import RPi.GPIO as gpio
+import time, os, sys
+
 class Pins:
     def __init__(self, inputs, outputs):
         self.__inputs = inputs
