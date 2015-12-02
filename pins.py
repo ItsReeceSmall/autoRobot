@@ -1,6 +1,8 @@
 class Pins:
     def __init__(self, inputs, outputs):
         self.__inputs = inputs
+        print (inputs)
+        print (self.__inputs)
         self.__outputs = outputs
         
     @property
