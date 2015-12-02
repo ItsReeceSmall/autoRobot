@@ -9,7 +9,7 @@ def setup(trigL,trigR,sonar,lmf,lmb,rmf,rmb,echoL,echoR):
     i = [trigL,trigR]
     o = [sonar,lmf,lmb,rmf,rmb,echoL,echoR]
     print('attempts to define "pins" as the imported class Pins with arrays i and o in it')
-    thepins = pins.Pins(i, o)
+    pin = pins.Pins(i, o)
     print('success')
 
 # all the pins we will use
