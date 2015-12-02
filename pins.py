@@ -21,9 +21,9 @@ class Pins:
     
     # Need to write code to setup all the pins that have been passed in
     
-for pin in self.__inputs:
-    gpio.setup(pin, gpio.IN)
-    print (str(pin) + ' is setup')
-for pin in self.__outputs:
-    gpio.setup(pin, gpio.OUT)
-    print (str(pin) + ' is setup')
+    for pin in self.__inputs:
+        gpio.setup(pin, gpio.IN)
+        print (str(pin) + ' is setup')
+    for pin in self.__outputs:
+        gpio.setup(pin, gpio.OUT)
+        print (str(pin) + ' is setup')
