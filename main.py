@@ -22,8 +22,5 @@ def setup():
     thepins = pins.Pins(inputs, outputs)
     print('### ALL PINS IMPORTED AND SETUP SUCCESSFULLY ###')
 
-# all the pins we will use
-print ('pins are defined')
-print ('setup() is ran')
 setup()
 gpio.cleanup()
