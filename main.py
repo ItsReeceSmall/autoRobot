@@ -1,6 +1,6 @@
 import RPi.GPIO as gpio
 import time, os, sys
-import pins
+from pins import Pins
 
 def setup(trigL, trigR, sonar, lmf, lmb, rmf, rmb, echoL, echoR):
     #set GPIO up
