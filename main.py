@@ -2,20 +2,20 @@ import RPi.GPIO as gpio
 import time, os, sys
 import pins
 
-def setup(trigL,trigR,sonar,lmf,lmb,rmf,rmb,echoL,echoR):
+def setup(trigL, trigR, sonar, lmf, lmb, rmf, rmb, echoL, echoR):
     #set GPIO up
     print ('pins are called in fine')
     gpio.setmode(gpio.BOARD)
     print ('GPIO.BOARD is setup')
     #Set up pins from a class
     print(' attempts to do i as array')
-    i = [trigL,trigR]
+    inputs = [trigL,trigR]
     print(' does i as an array thing')
     print(' attempts the same with o')
-    o = [sonar,lmf,lmb,rmf,rmb,echoL,echoR]
+    outputs = [sonar,lmf,lmb,rmf,rmb,echoL,echoR]
     print('successfully does the same with o')
     print('attempts to define "pins" as the imported class Pins with arrays i and o in it')
-    pins = pins.Pins(i, o)
+    pins = pins.Pins(inputs, outputs)
     print('success')
 
 # all the pins we will use
@@ -30,5 +30,5 @@ trigR = 37
 echoR = 35
 print ('pins are defined')
 print ('setup() is ran')
-setup(trigL,trigR,sonar,lmf,lmb,rmf,rmb,echoL,echoR)
+setup(trigL, trigR, sonar, lmf, lmb, rmf, rmb, echoL, echoR)
 gpio.cleanup()
