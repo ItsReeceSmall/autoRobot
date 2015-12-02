@@ -1,6 +1,5 @@
 import RPi.GPIO as gpio
 import time, os, sys, glob
-import main
 
 class Pins:
     def __init__(self, inputs, outputs):
