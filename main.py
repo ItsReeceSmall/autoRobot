@@ -1,6 +1,6 @@
 import RPi.GPIO as gpio
 import time, os, sys
-import pins
+import pins, front
 
 def setup():
     #set GPIO up
