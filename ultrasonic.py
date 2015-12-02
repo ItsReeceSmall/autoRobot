@@ -9,4 +9,4 @@ class ultrasonic:
 
   @distance.setter
       def height((self, value):
-      self.__distance
+      self.__distance=value
