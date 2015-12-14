@@ -22,13 +22,18 @@ def setup():
     outputs = [sonar,lmf,lmb,rmf,rmb,echoL,echoR]
     print('### ATTEMPTING TO IMPORT AND SETUP PINS ###')
     thepins = pins.Pins(inputs, outputs)
-    thefront = front.Front(sonar)
-    thesidesLeft = sides.Sides(trigL, echoL)
-    thesidesRight = sides.Sides(trigR, echoR)
-    print(thefront.Distance)
-    print('left ' + thesidesLeft.Distance)
-    print('right ' + thesidesRight.Distance)
     print('### ALL PINS IMPORTED AND SETUP SUCCESSFULLY ###')
-
+    while True:
+        thefront = front.Front(sonar)
+        thesidesLeft = sides.Sides(trigL, echoL)
+        thesidesRight = sides.Sides(trigR, echoR)
+        f = (thefront.Distance)
+        l = (thesidesLeft.Distance)
+        r = (thesidesRight.Distance)
+        thewheels = wheels.Wheels(f, l, r, rmf, rmb, lmf, lmb)
+    #print(thefront.Distance)
+    #print('left ' + thesidesLeft.Distance)
+    #print('right ' + thesidesRight.Distance)
+    
 setup()
 gpio.cleanup()
