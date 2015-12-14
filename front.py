@@ -4,6 +4,7 @@ import time, os, sys
 class Front:
   def __init__(self, sonar):
     self.__sonar = sonar
+    self.__distance = distance
     self.getDistance()
     
   @property
@@ -13,6 +14,14 @@ class Front:
   @Sonar.setter
   def Sonar(self, value):
     self.__sonar = value
+  
+  @property
+  def Distance(self):
+    return self.__distance
+  
+  @Distance.setter
+  def Distance(self, value):
+    self.__Distance = value
     
   def getDistance(self):
     # The Pi2go pre written method changed to work with python3 which checks the ultrasonic sensor on the board
