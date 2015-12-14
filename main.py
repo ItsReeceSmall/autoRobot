@@ -22,6 +22,7 @@ def setup():
     outputs = [sonar,lmf,lmb,rmf,rmb,echoL,echoR]
     print('### ATTEMPTING TO IMPORT AND SETUP PINS ###')
     thepins = pins.Pins(inputs, outputs)
+    thefront = front.Front(sonar)
     print('### ALL PINS IMPORTED AND SETUP SUCCESSFULLY ###')
 
 setup()
