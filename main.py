@@ -1,7 +1,7 @@
 import RPi.GPIO as gpio
 import time, os, sys
 import pins
-#import front
+import front
 #import sides
 
 def setup():
