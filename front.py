@@ -14,7 +14,7 @@ class Front:
   def Sonar(self, value):
     self.__sonar = value
     
-  def getDistance(self.__sonar):
+  def getDistance(self):
     # The Pi2go pre written method changed to work with python3 which checks the ultrasonic sensor on the board
     gpio.setup(self.__sonar, gpio.OUT)
     # Send 10us pulse to trigger
