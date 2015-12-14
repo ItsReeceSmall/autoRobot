@@ -5,6 +5,7 @@ class Front:
   def __init__(self, sonar):
     self.__sonar = sonar
     self.__distance = 0
+    self.getDistance()
     
   @property
   def Sonar(self):
