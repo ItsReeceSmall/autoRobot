@@ -4,7 +4,7 @@ import time, os, sys
 class Front:
   def __init__(self, sonar):
     self.__sonar = sonar
-    self.__distance = getDistance()
+    self.__distance = 0
     
   @property
   def Sonar(self):
@@ -44,4 +44,3 @@ class Front:
     # multiplied by the speed of sound 34000(cm/s) divided by 2
     distance = elapsed * 17000
     self.__distance = distance
-    return distance
