@@ -23,7 +23,7 @@ def setup():
     print('### ATTEMPTING TO IMPORT AND SETUP PINS ###')
     thepins = pins.Pins(inputs, outputs)
     thefront = front.Front(sonar)
-    print (front.Front(sonar)
+    print (front.Front(sonar))
     print('### ALL PINS IMPORTED AND SETUP SUCCESSFULLY ###')
 
 setup()
