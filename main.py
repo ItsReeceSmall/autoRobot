@@ -30,8 +30,8 @@ def setup():
         f = (thefront.Distance)
         l = (thesidesLeft.Distance)
         r = (thesidesRight.Distance)
-        wheels = [rmf,rmb,lmf,lmb,f,l,r]
-        thewheels = wheels.Wheels(wheels)
+        wheelPins = [rmf,rmb,lmf,lmb,f,l,r]
+        thewheels = wheels.Wheels(wheelPins)
     #print(thefront.Distance)
     #print('left ' + thesidesLeft.Distance)
     #print('right ' + thesidesRight.Distance)
