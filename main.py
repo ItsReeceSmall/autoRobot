@@ -45,7 +45,7 @@ def setup():
         f = (thefront.Distance)
         l = (thesidesLeft.Distance)
         r = (thesidesRight.Distance)
-        thewheels = wheels.Wheels(rmf,rmb,lmf,lmb,f,l,r)
+        thewheels = wheels.Wheels(rmf,rmb,lmf,lmb,f,l,r,lmfPWM,lmbPWM,rmfPWM,rmbPWM)
     #print(thefront.Distance)
     #print('left ' + thesidesLeft.Distance)
     #print('right ' + thesidesRight.Distance)
