@@ -63,8 +63,8 @@ class Wheels:
 
   def wheelsGo(self):
     print ('#######################')
-    print ('Left: ' + str(l))        # Prints the distance on screen to show what the pi is detecting
-    if l < 25:
+    print ('Left: ' + str(self.__l))        # Prints the distance on screen to show what the pi is detecting
+    if self.__l < 25:
         lmfPWM.ChangeDutyCycle(65)
         print('')
         print ('lmf speed = 65')
@@ -78,8 +78,8 @@ class Wheels:
         print (' ')
         lmfPWM.ChangeDutyCycle(100)
         rmfPWM.ChangeDutyCycle(96)                    # If the distance is lower than 25cm then the code below is ran.
-    print ('Right: ' + str(r))      # Prints the distance on screen to show what the pi is detecting
-    if r < 25:
+    print ('Right: ' + str(self.__r))      # Prints the distance on screen to show what the pi is detecting
+    if self.__r < 25:
         lmfPWM.ChangeDutyCycle(100)
         print('')
         print ('lmf speed = 100')
@@ -92,13 +92,13 @@ class Wheels:
         print ('reset to 96')
         print (' ')
         rmfPWM.ChangeDutyCycle(96)                   # If the distance is lower than 25cm then the code below is ran.
-    print ('Front: ' + str(f))      # Prints the distance on screen to show what the pi is detecting
-    if f < 40:                      # If the front sensor is less than 40cm away from a block, it will run the code below
+    print ('Front: ' + str(self.__f))      # Prints the distance on screen to show what the pi is detecting
+    if self.__f < 40:                      # If the front sensor is less than 40cm away from a block, it will run the code below
         lmfPWM.ChangeDutyCycle(0)
         lmbPWM.ChangeDutyCycle(0)       # All the motors are stopped, set to 0
         rmfPWM.ChangeDutyCycle(0)
         rmbPWM.ChangeDutyCycle(0)
-        if l < r:                # Checks if the left distance is less than the right, if True, code below is ran
+        if self.__l < self.__r:                # Checks if the left distance is less than the right, if True, code below is ran
             print('Going Back')
             lmbPWM.ChangeDutyCycle(55)  # The wheels go backwards
             rmbPWM.ChangeDutyCycle(55) 
@@ -109,7 +109,7 @@ class Wheels:
             time.sleep(1.7)             # For 1.7 seconds
             lmbPWM.ChangeDutyCycle(0)   # Both wheels stop and are set to 0
             rmfPWM.ChangeDutyCycle(0)
-        if r < l:                # Checks if the right distance is less than the left, if True, code below is ran
+        if self.__r < self.__l:                # Checks if the right distance is less than the left, if True, code below is ran
             print('Going Back')
             lmbPWM.ChangeDutyCycle(55)  # The wheels go backwards
             rmbPWM.ChangeDutyCycle(55)
