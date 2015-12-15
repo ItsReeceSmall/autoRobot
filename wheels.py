@@ -2,7 +2,7 @@ import RPi.GPIO as gpio
 import time, sys, os
 
 class Wheels:
-  def __init__(self, f, l, r, rmf, rmb, lmf, lmb):
+  def __init__(self, rmf, rmb, lmf, lmb, f, l, r):
     self.__rmf = rmf
     self.__rmb = rmb
     self.__lmf = lmf
