@@ -23,6 +23,20 @@ def setup():
     print('### ATTEMPTING TO IMPORT AND SETUP PINS ###')
     thepins = pins.Pins(inputs, outputs)
     print('### ALL PINS IMPORTED AND SETUP SUCCESSFULLY ###')
+# Right Wheel Forward
+    rmfPWM = gpio.PWM(rmf,100)  # Right Motor Forward, sets power output to 100
+    rmbPWM = gpio.PWM(rmb,100)  # Right Motor Back, sets power output to 100
+    rmfPWM.start(0) # starts on 0
+    rmbPWM.start(0) # starts on 0
+    rmfPWM.ChangeDutyCycle(96)  # Right Motor Forward changes its power its recieving to 96
+    rmbPWM.ChangeDutyCycle(0)   # Right Motor Back has 0 recieving power as we dont want it to go back
+# Left Wheel Forward
+    lmfPWM = gpio.PWM(lmf,100)  # Left Motor Forward, sets power output to 100
+    lmbPWM = gpio.PWM(lmb,100)  # Left Motor Back, sets power output to 100
+    lmfPWM.start(0) # starts on 0
+    lmbPWM.start(0) # starts on 0
+    lmfPWM.ChangeDutyCycle(100) # Left Motor Forward changes its power its recieving to 96
+    lmbPWM.ChangeDutyCycle(0)   # Left Motor Back has 0 recieving power as we dont want it to go back
     while True:
         thefront = front.Front(sonar)
         thesidesLeft = sides.Sides(trigL, echoL)
