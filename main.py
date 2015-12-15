@@ -20,6 +20,7 @@ def setup():
     # Set there categories
     inputs = [trigL,trigR]
     outputs = [sonar,lmf,lmb,rmf,rmb,echoL,echoR]
+    wheels = [rmf,rmb,lmf,lmb,f,l,r]
     print('### ATTEMPTING TO IMPORT AND SETUP PINS ###')
     thepins = pins.Pins(inputs, outputs)
     print('### ALL PINS IMPORTED AND SETUP SUCCESSFULLY ###')
@@ -30,7 +31,7 @@ def setup():
         f = (thefront.Distance)
         l = (thesidesLeft.Distance)
         r = (thesidesRight.Distance)
-        thewheels = wheels.Wheels(f, l, r, rmf, rmb, lmf, lmb)
+        thewheels = wheels.Wheels(wheels)
     #print(thefront.Distance)
     #print('left ' + thesidesLeft.Distance)
     #print('right ' + thesidesRight.Distance)
