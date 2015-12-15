@@ -2,64 +2,16 @@ import RPi.GPIO as gpio
 import time, sys, os
 
 class Wheels:
-  def __init__(self, f, l, r, rmf, rmb, lmf, lmb):
-    self.__rmf = rmf
-    self.__rmb = rmb
-    self.__lmf = lmf
-    self.__lmb = lmb
-    self.__f = f
-    self.__l = l
-    self.__r = r
+  def __init__(self, wheels):
+    self.__wheels = wheels
     self.wheelsGo()
     
   @property
-  def rmf(self):
-    return self.__rmf
-  @rmf.setter
-  def rmf(self, value):
-    self.__rmf = value
-  
-  @property
-  def rmb(self):
-    return self.__rmb
-  @rmb.setter
-  def rmb(self, value):
-    self.__rmb = value
-  
-  @property
-  def lmf(self):
-    return self.__lmf
-  @lmf.setter
-  def lmf(self, value):
-    self.__lmf = value
-  
-  @property
-  def lmb(self):
-    return self.__lmb
-  @lmb.setter
-  def lmb(self, value):
-    self.__lmb = value
-  
-  @property
-  def f(self):
-    return self.__f
-  @f.setter
-  def f(self, value):
-    self.__f = value
-  
-  @property
-  def l(self):
-    return self.__l
-  @l.setter
-  def l(self, value):
-    self.__l = value
-  
-  @property
-  def r(self):
-    return self.__r
-  @r.setter
-  def r(self, value):
-    self.__r = value
+  def wheels(self):
+    return self.__wheels
+  @wheels.setter
+  def wheels(self, value):
+    self.__wheels = value
   
   def wheelsGo(self):
     print ('#######################')
