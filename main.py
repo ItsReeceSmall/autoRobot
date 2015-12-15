@@ -3,6 +3,7 @@ import time, os, sys
 import pins
 import front
 import sides
+import wheels
 
 def setup():
     #set GPIO up
