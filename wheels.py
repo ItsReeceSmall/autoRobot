@@ -2,16 +2,16 @@ import RPi.GPIO as gpio
 import time, sys, os
 
 class Wheels:
-  def __init__(self, wheels):
-    self.__wheels = wheels
+  def __init__(self, wheelPins):
+    self.__wheelPins = wheelPins
     self.wheelsGo()
     
   @property
-  def wheels(self):
-    return self.__wheels
-  @wheels.setter
-  def wheels(self, value):
-    self.__wheels = value
+  def wheelPins(self):
+    return self.__wheelPins
+  @wheelPins.setter
+  def wheelPins(self, value):
+    self.__wheelPins = value
   
   def wheelsGo(self):
     print ('#######################')
