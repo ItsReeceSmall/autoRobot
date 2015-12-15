@@ -2,7 +2,7 @@ import RPi.GPIO as gpio
 import time, sys, os
 
 class Wheels:
-  def __init__(self, rmf, rmb, lmf, lmb, f, l, r):
+  def __init__(self, rmf, rmb, lmf, lmb, f, l, r, lmfPWM,lmbPWM,rmfPWM,rmbPWM):
     self.__rmf = rmf
     self.__rmb = rmb
     self.__lmf = lmf
@@ -10,7 +10,39 @@ class Wheels:
     self.__f = f
     self.__l = l
     self.__r = r
+    self.__rmfPWM = rmfPWM
+    self.__rmbPWM = rmbPWM
+    self.__lmfPWM = lmfPWM
+    self.__lmbPWM = lmbPWM
     self.wheelsGo()
+
+  @property
+  def rmfPWM(self):
+    return self.__rmfPWM
+  @rmfPWM.setter
+  def rmfPWM(self, value):
+    self.__rmfPWM = value
+    
+  @property
+  def rmbPWM(self):
+    return self.__rmbPWM
+  @rmbPWM.setter
+  def rmbPWM(self, value):
+    self.__rmbPWM = value
+
+  @property
+  def lmfPWM(self):
+    return self.__lmfPWM
+  @lmfPWM.setter
+  def lmfPWM(self, value):
+    self.__lmfPWM = value
+  
+  @property
+  def lmbPWM(self):
+    return self.__lmbPWM
+  @lmbPWM.setter
+  def lmbPWM(self, value):
+    self.__lmbPWM = value
     
   @property
   def rmf(self):
