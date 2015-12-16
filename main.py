@@ -51,7 +51,7 @@ def setup():
         r = (thesidesRight.Distance)
         irResponse = ir.IR(irFL, irFR, irMID)
         i = (irResponse.detection)
-        thewheels = wheels.Wheels(rmf,rmb,lmf,lmb,f,l,r,i,lmfPWM,lmbPWM,rmfPWM,rmbPWM)
+        thewheels = wheels.Wheels(rmf,rmb,lmf,lmb,f,l,r,i,lmfPWM,lmbPWM,rmfPWM,rmbPWM,irFL,irFR,irMID)
     #print(thefront.Distance)
     #print('left ' + thesidesLeft.Distance)
     #print('right ' + thesidesRight.Distance)
