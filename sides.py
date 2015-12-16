@@ -5,7 +5,7 @@ class Sides:
   def __init__(self, TRIG, ECHO):
     self.__TRIG = TRIG
     self.__ECHO = ECHO
-    self.__distance = 0
+    self.__distance = distance
     self.getSideDist()
     
   @property
