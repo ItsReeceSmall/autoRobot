@@ -7,7 +7,7 @@ class IR:
         self.__irFR = irFR
         self.__irMID = irMID
         self.__detection = 0
-        self.__irAll()
+        self.__irAll = 0
     
     @property
     def detection(self):
