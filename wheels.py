@@ -125,7 +125,7 @@ class Wheels:
         print (' ')
         self.__rmfPWM.ChangeDutyCycle(96)                   # If the distance is lower than 25cm then the code below is ran.
     print ('Front: ' + str(self.__f))      # Prints the distance on screen to show what the pi is detecting
-    if self.__f < 30:                      # If the front sensor is less than 40cm away from a block, it will run the code below
+    if self.__f < 50:                      # If the front sensor is less than 40cm away from a block, it will run the code below
         self.__lmfPWM.ChangeDutyCycle(0)
         self.__lmbPWM.ChangeDutyCycle(0)       # All the motors are stopped, set to 0
         self.__rmfPWM.ChangeDutyCycle(0)
