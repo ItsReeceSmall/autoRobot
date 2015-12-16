@@ -2,7 +2,7 @@ import RPi.GPIO as gpio
 import time, sys, os
 
 class Wheels:
-  def __init__(self, rmf, rmb, lmf, lmb, f, l, r, lmfPWM, lmbPWM, rmfPWM, rmbPWM, irFL, irFR, irMID):
+  def __init__(self, rmf, rmb, lmf, lmb, f, l, r, i, lmfPWM, lmbPWM, rmfPWM, rmbPWM):
     self.__rmf = rmf
     self.__rmb = rmb
     self.__lmf = lmf
@@ -10,15 +10,16 @@ class Wheels:
     self.__f = f
     self.__l = l
     self.__r = r
+    self.__i = i
     self.__rmfPWM = rmfPWM
     self.__rmbPWM = rmbPWM
     self.__lmfPWM = lmfPWM
     self.__lmbPWM = lmbPWM
-    self.__irFL = irFL
-    self.__irFR = irFR
-    self.__irMID = irMID
+#    self.__irFL = irFL
+#    self.__irFR = irFR
+#    self.__irMID = irMID
     self.wheelsGo()
-
+'''
   @property
   def irFL(self):
     return self.__irFL
@@ -39,7 +40,7 @@ class Wheels:
   @irMID.setter
   def irMID(self, value):
     self.__irMID = value
-  
+  '''
   @property
   def rmfPWM(self):
     return self.__rmfPWM
@@ -116,6 +117,14 @@ class Wheels:
   @r.setter
   def r(self, value):
     self.__r = value
+    
+  @property
+  def i(self):
+    return self.__r
+  @i.setter
+  def i(self, value):
+    self.__i = value
+
 
   def wheelsGo(self):
     print ('#######################')
@@ -149,12 +158,12 @@ class Wheels:
         print (' ')
         self.__rmfPWM.ChangeDutyCycle(96)                   # If the distance is lower than 25cm then the code below is ran.
     print ('Front: ' + str(self.__f))      # Prints the distance on screen to show what the pi is detecting
-    if self.__f < 50:                      # If the front sensor is less than 40cm away from a block, it will run the code below
+    if self.__f < 50 or i == 1:                      # If the front sensor is less than 40cm away from a block, it will run the code below
         self.__lmfPWM.ChangeDutyCycle(0)
         self.__lmbPWM.ChangeDutyCycle(0)       # All the motors are stopped, set to 0
         self.__rmfPWM.ChangeDutyCycle(0)
         self.__rmbPWM.ChangeDutyCycle(0)
-        if self.__l < self.__r:                # Checks if the left distance is less than the right, if True, code below is ran
+        if self.__l < self.__r or i == 1:                # Checks if the left distance is less than the right, if True, code below is ran
             print('Going Back')
             self.__lmbPWM.ChangeDutyCycle(55)  # The wheels go backwards
             self.__rmbPWM.ChangeDutyCycle(55) 
@@ -165,7 +174,7 @@ class Wheels:
             time.sleep(1.7)             # For 1.7 seconds
             self.__lmbPWM.ChangeDutyCycle(0)   # Both wheels stop and are set to 0
             self.__rmfPWM.ChangeDutyCycle(0)
-        if self.__r < self.__l:                # Checks if the right distance is less than the left, if True, code below is ran
+        if self.__r < self.__l or i == 1:                # Checks if the right distance is less than the left, if True, code below is ran
             print('Going Back')
             self.__lmbPWM.ChangeDutyCycle(55)  # The wheels go backwards
             self.__rmbPWM.ChangeDutyCycle(55)
