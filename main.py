@@ -1,4 +1,5 @@
 import RPi.GPIO as gpio
+import pi2go as p
 import time, os, sys
 import pins
 import front
@@ -18,8 +19,11 @@ def setup():
     echoL = 36
     trigR = 37
     echoR = 35
+    irFL = 11
+    irFR = 7
+    irMID = 13
     # Set there categories
-    inputs = [trigL,trigR]
+    inputs = [trigL,trigR,irFL,irFR,irMID]
     outputs = [sonar,lmf,lmb,rmf,rmb,echoL,echoR]
     print('### ATTEMPTING TO IMPORT AND SETUP PINS ###')
     thepins = pins.Pins(inputs, outputs)
@@ -45,7 +49,7 @@ def setup():
         f = (thefront.Distance)
         l = (thesidesLeft.Distance)
         r = (thesidesRight.Distance)
-        thewheels = wheels.Wheels(rmf,rmb,lmf,lmb,f,l,r,lmfPWM,lmbPWM,rmfPWM,rmbPWM)
+        thewheels = wheels.Wheels(rmf,rmb,lmf,lmb,f,l,r,lmfPWM,lmbPWM,rmfPWM,rmbPWM,irFL,irFR,irMID)
     #print(thefront.Distance)
     #print('left ' + thesidesLeft.Distance)
     #print('right ' + thesidesRight.Distance)
