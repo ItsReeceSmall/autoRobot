@@ -5,7 +5,7 @@ class Sides:
   def __init__(self, TRIG, ECHO):
     self.__TRIG = TRIG
     self.__ECHO = ECHO
-    self.__distance = distance
+    self.__distance = 0
     self.getSideDist()
     
   @property
@@ -51,4 +51,4 @@ class Sides:
     distance = pulse_duration * 17150
     distance = round(distance, 2)
     #print ("Distance: " + str(distance) + "cm")
-    return distance
+    self.__distance = distance
