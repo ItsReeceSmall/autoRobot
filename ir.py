@@ -6,7 +6,7 @@ class IR:
         self.__irFL = irFL
         self.__irFR = irFR
         self.__irMID = irMID
-        self.__detection = detection
+        self.__detection = 0
         self.__irAll()
     
     @property
