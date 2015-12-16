@@ -1,10 +1,10 @@
 import RPi.GPIO as gpio
-import pi2go as p
 import time, os, sys
 import pins
 import front
 import sides
 import wheels
+import ir
 
 def setup():
     #set GPIO up
@@ -49,7 +49,9 @@ def setup():
         f = (thefront.Distance)
         l = (thesidesLeft.Distance)
         r = (thesidesRight.Distance)
-        thewheels = wheels.Wheels(rmf,rmb,lmf,lmb,f,l,r,lmfPWM,lmbPWM,rmfPWM,rmbPWM,irFL,irFR,irMID)
+        irResponse = ir.IR(irFL, irFR, irMID)
+        i = (irResponse.detection)
+        thewheels = wheels.Wheels(rmf,rmb,lmf,lmb,f,l,r,i,lmfPWM,lmbPWM,rmfPWM,rmbPWM,irFL,irFR,irMID)
     #print(thefront.Distance)
     #print('left ' + thesidesLeft.Distance)
     #print('right ' + thesidesRight.Distance)
