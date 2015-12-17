@@ -1,5 +1,6 @@
 import RPi.GPIO as gpio
 import time, sys, os
+import pi2go as p
 
 class Wheels:
   def __init__(self, rmf, rmb, lmf, lmb, f, l, r, i, lmfPWM, lmbPWM, rmfPWM, rmbPWM):
@@ -100,12 +101,12 @@ class Wheels:
   @i.setter
   def i(self, value):
     self.__i = value
-
-
+    
   def wheelsGo(self):
     print ('#######################')
     print ('Left: ' + str(self.__l))        # Prints the distance on screen to show what the pi is detecting
     if self.__l < 25:
+        p.pwm.setPWM(3 * 3 + Red, 0, red)
         self.__lmfPWM.ChangeDutyCycle(65)
         print('')
         print ('lmf speed = 65')
