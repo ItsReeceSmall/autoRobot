@@ -38,7 +38,7 @@ class IR:
         self.__irMID = value
     
     def irAll(self):
-        if gpio.input(irFL)==0 or gpio.input(irFR)==0 and gpio.input(irMID)==0:
+        if gpio.input(irFL)==0 or gpio.input(irFR)==0 or gpio.input(irMID)==0:
             self.__detection = 1
         else:
             self.__detection = 0
