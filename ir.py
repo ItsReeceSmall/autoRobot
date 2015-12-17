@@ -38,9 +38,9 @@ class irSensor:
         self.__irMID = value
     
     def irDetection(self):
-        print (gpio.input(self.__irFL))
-        print (gpio.input(self.__irFR))
-        print (gpio.input(self.__irMID))
+        #print (gpio.input(self.__irFL))
+        #print (gpio.input(self.__irFR))
+        #print (gpio.input(self.__irMID))
         if gpio.input(self.__irFL)==0:
             self.__detection = 1
         elif gpio.input(self.__irFR)==0:
