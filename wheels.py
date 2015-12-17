@@ -105,7 +105,6 @@ class Wheels:
     print ('#######################')
     print ('Left: ' + str(self.__l))        # Prints the distance on screen to show what the pi is detecting
     if self.__l < 25:
-        p.pwm.setPWM(3 * 3 + Red, 0, red)
         self.__lmfPWM.ChangeDutyCycle(65)
         print('')
         print ('lmf speed = 65')
