@@ -1,7 +1,7 @@
 import RPi.GPIO as gpio
 import time, sys, os
 
-class IrSensor:
+class irSensor:
     def __init__(self, irFL, irFR, irMID):
         self.__irFL = irFL
         self.__irFR = irFR
