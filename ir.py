@@ -7,7 +7,7 @@ class IR:
         self.__irFR = irFR
         self.__irMID = irMID
         self.__detection = 0
-        self.__irAll()
+        self.__irDetection()
     
     @property
     def detection(self):
@@ -37,7 +37,7 @@ class IR:
     def irMID(self, value):
         self.__irMID = value
     
-    def irAll(self):
+    def irDetection(self):
         print (gpio.input(self.__irFL))
         print (gpio.input(self.__irFR))
         print (gpio.input(self.__irMID))
