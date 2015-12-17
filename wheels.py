@@ -2,7 +2,7 @@ import RPi.GPIO as gpio
 import time, sys, os
 
 class Wheels:
-  def __init__(self, rmf, rmb, lmf, lmb, f, l, r, i, lmfPWM, lmbPWM, rmfPWM, rmbPWM, irFL, irFR, irMID):
+  def __init__(self, rmf, rmb, lmf, lmb, f, l, r, i, lmfPWM, lmbPWM, rmfPWM, rmbPWM):
     self.__rmf = rmf
     self.__rmb = rmb
     self.__lmf = lmf
@@ -15,32 +15,8 @@ class Wheels:
     self.__rmbPWM = rmbPWM
     self.__lmfPWM = lmfPWM
     self.__lmbPWM = lmbPWM
-    self.__irFL = irFL
-    self.__irFR = irFR
-    self.__irMID = irMID
     self.wheelsGo()
     
-  @property
-  def irFL(self):
-    return self.__irFL
-  @irFL.setter
-  def irFL(self, value):
-    self.__irFL = value
-    
-  @property
-  def irFR(self):
-    return self.__irFR
-  @irFR.setter
-  def irFR(self, value):
-    self.__irFR = value
-    
-  @property
-  def irMID(self):
-    return self.__irMID
-  @irMID.setter
-  def irMID(self, value):
-    self.__irMID = value
-
   @property
   def rmfPWM(self):
     return self.__rmfPWM
