@@ -1,6 +1,5 @@
 import RPi.GPIO as gpio
 import time, sys, os
-import pi2go/pi2go as p
 
 class Wheels:
   def __init__(self, rmf, rmb, lmf, lmb, f, l, r, i, lmfPWM, lmbPWM, rmfPWM, rmbPWM):
