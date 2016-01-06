@@ -19,5 +19,5 @@ class Pins:
     def Outputs(self, value):
         self.__outputs = value
     
-    # Need to write code to setup all the pins that have been passed in
+    # Need to write code to setup all the pin that have been passed in
     
